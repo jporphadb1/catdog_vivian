@@ -1,0 +1,18 @@
+<form class="animal-filters" [formGroup]="form" (ngSubmit)="applyFilters()">
+  <label class="animal-filters__field">
+    Espécie
+    <input type="text" formControlName="species" name="species" />
+  </label>
+
+  <label class="animal-filters__field">
+    Raça
+    <input type="text" formControlName="breed" name="breed" />
+  </label>
+
+  <label class="animal-filters__field">
+    Localização
+    <input type="text" formControlName="location" name="location" />
+  </label>
+
+  <button type="submit">Filtrar</button>
+</form>

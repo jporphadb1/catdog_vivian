@@ -1,0 +1,17 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 320px;
+}
+
+.login-form__field {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+}
+
+.login-form__error {
+  color: #b00020;
+  margin: 0;
+}

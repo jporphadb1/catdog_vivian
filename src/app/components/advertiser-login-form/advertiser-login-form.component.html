@@ -1,0 +1,19 @@
+<form class="login-form" [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Entrar</h2>
+
+  <label class="login-form__field">
+    Usuário ou e-mail
+    <input type="text" formControlName="usernameOrEmail" name="usernameOrEmail" />
+  </label>
+
+  <label class="login-form__field">
+    Senha
+    <input type="password" formControlName="password" name="password" />
+  </label>
+
+  @if (errorMessage) {
+    <p role="alert" class="login-form__error">{{ errorMessage }}</p>
+  }
+
+  <button type="submit" [disabled]="loggingIn">Entrar</button>
+</form>

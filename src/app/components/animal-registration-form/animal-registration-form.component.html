@@ -1,0 +1,60 @@
+<form class="registration-form" [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Cadastrar animal</h2>
+
+  <label class="registration-form__field">
+    Espécie
+    <input type="text" formControlName="species" name="species" />
+    @if (fieldErrors['species']) {
+      <span class="registration-form__field-error">{{ fieldErrors['species'] }}</span>
+    }
+  </label>
+
+  <label class="registration-form__field">
+    Raça
+    <input type="text" formControlName="breed" name="breed" />
+  </label>
+
+  <label class="registration-form__field">
+    Nome
+    <input type="text" formControlName="name" name="name" />
+  </label>
+
+  <label class="registration-form__field">
+    Data de nascimento
+    <input type="date" formControlName="birthDate" name="birthDate" />
+  </label>
+
+  <label class="registration-form__field">
+    Descrição
+    <textarea formControlName="description" name="description"></textarea>
+    @if (fieldErrors['description']) {
+      <span class="registration-form__field-error">{{ fieldErrors['description'] }}</span>
+    }
+  </label>
+
+  <label class="registration-form__field">
+    Localização
+    <input type="text" formControlName="location" name="location" />
+    @if (fieldErrors['location']) {
+      <span class="registration-form__field-error">{{ fieldErrors['location'] }}</span>
+    }
+  </label>
+
+  <label class="registration-form__field">
+    Foto
+    <input type="file" accept="image/jpeg,image/png,image/webp" (change)="onFileSelected($event)" />
+    @if (fieldErrors['photoUrl']) {
+      <span class="registration-form__field-error">{{ fieldErrors['photoUrl'] }}</span>
+    }
+  </label>
+
+  @if (errorMessage) {
+    <p role="alert" class="registration-form__error">{{ errorMessage }}</p>
+  }
+
+  @if (successMessage) {
+    <p class="registration-form__success">{{ successMessage }}</p>
+  }
+
+  <button type="submit" [disabled]="submitting">Cadastrar</button>
+</form>

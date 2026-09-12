@@ -1,0 +1,27 @@
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+}
+
+.registration-form__field {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+}
+
+.registration-form__field-error {
+  color: #b00020;
+  font-size: 0.85em;
+}
+
+.registration-form__error {
+  color: #b00020;
+  margin: 0;
+}
+
+.registration-form__success {
+  color: #1b5e20;
+  margin: 0;
+}

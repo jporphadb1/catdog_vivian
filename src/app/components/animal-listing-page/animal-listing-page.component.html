@@ -1,0 +1,21 @@
+<app-animal-filters (filterChange)="onFilterChange($event)"></app-animal-filters>
+
+@if (loading) {
+  <p>Carregando...</p>
+} @else if (errorMessage) {
+  <p role="alert">{{ errorMessage }}</p>
+} @else if (animals.length === 0) {
+  <p>Nenhum animal encontrado com os filtros selecionados.</p>
+} @else {
+  <div class="animal-grid">
+    @for (animal of animals; track animal.id) {
+      <app-animal-card [animal]="animal"></app-animal-card>
+    }
+  </div>
+
+  <nav class="pagination" aria-label="Paginação">
+    <button type="button" (click)="goToPage(pageNumber - 1)" [disabled]="pageNumber === 0">Anterior</button>
+    <span>Página {{ pageNumber + 1 }} de {{ totalPages }}</span>
+    <button type="button" (click)="goToPage(pageNumber + 1)" [disabled]="pageNumber + 1 >= totalPages">Próxima</button>
+  </nav>
+}

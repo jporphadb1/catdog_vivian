@@ -1,0 +1,13 @@
+.animal-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+
+.animal-filters__field {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+}

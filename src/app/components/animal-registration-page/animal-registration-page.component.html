@@ -1,0 +1,5 @@
+@if (isAuthenticated) {
+  <app-animal-registration-form></app-animal-registration-form>
+} @else {
+  <app-advertiser-login-form (loggedIn)="onLoggedIn()"></app-advertiser-login-form>
+}

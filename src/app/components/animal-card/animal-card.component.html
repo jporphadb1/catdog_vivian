@@ -1,0 +1,6 @@
+<article class="animal-card">
+  <img class="animal-card__photo" [src]="animal.photoUrl" [alt]="'Foto de animal disponível para adoção em ' + animal.location" />
+  <p class="animal-card__advertiser">{{ animal.advertiserName }}</p>
+  <p class="animal-card__description">{{ animal.descriptionSummary }}</p>
+  <p class="animal-card__location">{{ animal.location }}</p>
+</article>
